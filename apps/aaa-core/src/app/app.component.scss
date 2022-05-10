@@ -1,3 +1,14 @@
 :host {
     display: block;
 }
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.main {
+  flex-grow: 1;
+  min-height: calc(100vh - 96px - 96px - 20px - 20px);
+}

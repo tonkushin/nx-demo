@@ -1,3 +1,4 @@
+import { FooterModule, HeaderModule } from '@aaa/ui';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,6 +10,8 @@ import {
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 
+const MODULES = [HeaderModule, FooterModule];
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,7 +20,8 @@ import { AppComponent } from './app.component';
     TuiRootModule,
     TuiNotificationsModule,
     TuiDialogModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ...MODULES
   ],
   providers: [],
   bootstrap: [AppComponent],
