@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@aaa/api": ["libs/api/src/index.ts"],
       "@aaa/ui": ["libs/ui/src/index.ts"]
     }
   },

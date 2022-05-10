@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  display: inline-flex;
+  background-color: var(--tui-base-02);
+
+  &_marker-icon {
+    background-color: var(--tui-base-02);
+    color: var(--tui-base-05);
+  }
+}

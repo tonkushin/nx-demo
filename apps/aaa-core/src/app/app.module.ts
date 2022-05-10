@@ -1,4 +1,6 @@
-import { FooterModule, HeaderModule } from '@aaa/ui';
+import { ApiService } from '@aaa/api';
+import { FooterModule, HeaderModule, UserModule } from '@aaa/ui';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,7 +12,7 @@ import {
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 
-const MODULES = [HeaderModule, FooterModule];
+const MODULES = [HeaderModule, FooterModule, UserModule];
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,9 +23,10 @@ const MODULES = [HeaderModule, FooterModule];
     TuiNotificationsModule,
     TuiDialogModule,
     AppRoutingModule,
+    HttpClientModule,
     ...MODULES
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

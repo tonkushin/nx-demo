@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ApiService, IUserDto } from '@aaa/api';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Observable, of, startWith } from 'rxjs';
 
 @Component({
   selector: 'aaa-root',
@@ -6,6 +8,14 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-  title = 'aaa-core';
+export class AppComponent implements OnInit {
+  users$: Observable<IUserDto[]> = of([]);
+
+  constructor(private readonly apiService: ApiService) {
+  }
+
+  ngOnInit() {
+    this.users$ = this.apiService.loadUsers$().pipe(startWith([]));
+  }
+
 }

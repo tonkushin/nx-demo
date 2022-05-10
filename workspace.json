@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "aaa-core": "apps/aaa-core",
+    "api": "libs/api",
     "ui": "libs/ui"
   }
 }
