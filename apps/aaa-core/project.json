@@ -13,8 +13,20 @@
         "polyfills": "apps/aaa-core/src/polyfills.ts",
         "tsConfig": "apps/aaa-core/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/aaa-core/src/favicon.ico", "apps/aaa-core/src/assets"],
-        "styles": ["apps/aaa-core/src/styles.scss"],
+        "assets": [
+          "apps/aaa-core/src/favicon.ico",
+          "apps/aaa-core/src/assets",
+          {
+            "glob": "**/*",
+            "input": "node_modules/@taiga-ui/icons/src",
+            "output": "assets/taiga-ui/icons"
+          }
+        ],
+        "styles": [
+          "node_modules/@taiga-ui/core/styles/taiga-ui-global.less",
+          "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
+          "apps/aaa-core/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
